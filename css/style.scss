@@ -9,105 +9,85 @@ body {
 }
 
 svg {
-    background-color: #333;
+    background-color: #fff;
     width: 100vw;
     height: 100vh;
     padding: 0;
     margin: 0;
     box-sizing: content-box;
+    animation: svg .5s linear backwards;
+}
+
+@keyframes svg {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .preloader {
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.st0 {
-    fill: #8CC63F;
-}
-
-.st1 {
-    fill: #F15A24;
-}
-
-.st2 {
-    fill: #C1272D;
-}
-
-.st3 {
-    fill: #065E0E;
-}
-
-.st4 {
-    fill: #aaa;
-}
-
-.st5 {
-    fill: #9E0B0B;
-}
-
-.st6 {
-    stroke: #070707;
-    stroke-width: 0.25;
-    stroke-miterlimit: 10;
-}
-
-.panel_item {
-    transition: opacity .3s linear;
-}
-
-.panel_item:nth-child(1) {
-    animation: panel .25s linear backwards;
-}
-
-.panel_item:nth-child(2) {
-    animation: panel .25s linear backwards;
-    animation-delay: .25s;
-}
-
-.panel_item:nth-child(3) {
-    animation: panel .25s linear backwards;
-    animation-delay: .5s;
-}
-
-.panel_item:nth-child(4) {
-    animation: panel .25s linear backwards;
-    animation-delay: .75s;
-}
-
-.panel_item:nth-child(5) {
-    animation: panel .25s linear backwards;
-    animation-delay: 1s;
-}
-
-.panel_item:nth-child(6) {
-    animation: panel .25s linear backwards;
-    animation-delay: 1.25s;
-}
-
-.panel_item:nth-child(7) {
-    animation: panel .25s linear backwards;
-    animation-delay: 1.5s;
-}
-
-@keyframes panel {
-    from {
-        opacity: 0.1;
-    }
-
-    to {
-        opacity: 1;
-    }
+    animation: preloader 1s linear backwards;
+    animation-delay: 1.8s;
+    background-color: #fff;
 }
 
 @keyframes logo {
     from {
         opacity: 0;
+        transform: translateY(25px);
     }
 
     to {
-        opacity: .9;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+#wleft,
+#wlefts {
+    animation: wingsleft 1s ease-in-out backwards;
+    transform-origin: right;
+}
+
+#wright,
+#wrights {
+    animation: wingsright 1s ease-in-out backwards;
+    transform-origin: left;
+}
+
+@keyframes wingsleft {
+    0% {
+        transform: rotate(13deg);
+    }
+
+    50% {
+        transform: rotate(-8deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes wingsright {
+    0% {
+        transform: rotate(-13deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+
+    100% {
+        transform: rotate(0);
     }
 }
 
@@ -122,18 +102,6 @@ svg {
 }
 
 #text {
-    animation: logo .6s ease-in backwards;
-    animation-delay: 2s;
-}
-
-#line {
-    animation: line linear backwards;
-    animation-duration: 2s;
-    animation-delay: 2.5s;
-}
-
-.preloader {
-    opacity: 1;
-    animation: preloader 1s linear;
-    animation-delay: 3s;
+    animation: logo .5s linear backwards;
+    animation-delay: 1s;
 }

@@ -1,9 +1,9 @@
-function panel() {
+function preloader() {
     let childPanel = document.querySelector('.preloader');
-    // childPanel.remove()
+    if (sessionStorage.getItem('preloader')) childPanel.remove();
     setTimeout(() => {
         childPanel.remove();
-    }, 4000)
-    console.log(childPanel);
+    }, 2800)
+    sessionStorage.setItem('preloader', true)
 }
-panel();
+preloader();
